@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from . forms import RegisterForm
 
 # Create your views here.
 def register(request):
-    return render(request,'register.html')
+    form=RegisterForm()
+    context = {
+        'form':form
+    }
+    return render(request,'register.html',context)
